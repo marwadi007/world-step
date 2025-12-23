@@ -5,108 +5,91 @@
   <title>G Midea Live</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Video.js -->
-  <link href="https://vjs.zencdn.net/8.6.1/video-js.css" rel="stylesheet" />
-
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: #0f172a;
       color: #ffffff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
-
-    .container {
-      max-width: 900px;
-      width: 95%;
-      background: #020617;
-      border-radius: 14px;
-      padding: 15px;
-      box-shadow: 0 0 25px rgba(0,0,0,0.6);
+      text-align: center;
     }
 
     h1 {
-      text-align: center;
-      margin-bottom: 10px;
+      margin: 15px 0;
       font-size: 22px;
+      color: #38bdf8;
     }
 
     .warning {
-      background: #7c2d12;
-      color: #ffedd5;
+      background: #dc2626;
       padding: 10px;
-      text-align: center;
-      border-radius: 8px;
-      margin-bottom: 12px;
       font-size: 14px;
+      font-weight: bold;
+    }
+
+    .player {
+      margin: 15px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(0,0,0,0.6);
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      background: black;
     }
 
     .telegram {
-      text-align: center;
-      margin-top: 15px;
+      margin: 20px;
     }
 
     .telegram a {
       display: inline-block;
       background: #229ED9;
-      color: #fff;
+      color: white;
+      padding: 14px 25px;
+      border-radius: 30px;
       text-decoration: none;
-      padding: 12px 20px;
-      border-radius: 25px;
+      font-size: 16px;
       font-weight: bold;
-      transition: 0.3s;
     }
 
     .telegram a:hover {
-      background: #1b8bbf;
+      background: #1d8abf;
     }
 
     footer {
-      text-align: center;
+      margin-top: 20px;
       font-size: 12px;
-      opacity: 0.6;
-      margin-top: 15px;
+      opacity: 0.7;
     }
   </style>
 </head>
-
 <body>
 
-  <div class="container">
-    <h1>📺 G Midea Live</h1>
+  <h1>G Midea Live</h1>
 
-    <div class="warning">
-      ⚠️ This link is about to expire
-    </div>
-
-    <video
-      id="liveVideo"
-      class="video-js vjs-default-skin vjs-fluid"
-      controls
-      autoplay
-      muted
-      preload="auto"
-      data-setup='{}'>
-      <source src="https://hesads.akamaized.net/ns/1762771538940/fb2dde0ab254326fb24511a33c215f4f/master.m3u8" type="application/x-mpegURL">
-    </video>
-
-    <div class="telegram">
-      <p>📢 Join Telegram Channel</p>
-      <a href="https://t.me/sportplayergmidea" target="_blank">
-        Join Now
-      </a>
-    </div>
-
-    <footer>
-      Stream may stop anytime • Stay connected on Telegram
-    </footer>
+  <div class="warning">
+    ⚠️ This live link may expire anytime
   </div>
 
-  <script src="https://vjs.zencdn.net/8.6.1/video.min.js"></script>
+  <div class="player">
+    <video controls autoplay muted playsinline>
+      <source src="https://hesads.akamaized.net/ns/1766129448530/1a7b875a80802e5f01252ee4a8a61475/master.m3u8" type="application/x-mpegURL">
+      Your browser does not support live streaming.
+    </video>
+  </div>
+
+  <div class="telegram">
+    <a href="https://t.me/sportplayergmidea" target="_blank">
+      📢 Join Telegram Channel
+    </a>
+  </div>
+
+  <footer>
+    © G Midea Live | For updated links join Telegram
+  </footer>
 
 </body>
 </html>
