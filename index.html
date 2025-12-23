@@ -5,59 +5,108 @@
   <title>G Midea Live</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <!-- Video.js -->
+  <link href="https://vjs.zencdn.net/8.6.1/video-js.css" rel="stylesheet" />
 
   <style>
     body {
       margin: 0;
-      background: #000;
-      color: #fff;
       font-family: Arial, sans-serif;
-      text-align: center;
+      background: #0f172a;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
     }
+
+    .container {
+      max-width: 900px;
+      width: 95%;
+      background: #020617;
+      border-radius: 14px;
+      padding: 15px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.6);
+    }
+
     h1 {
-      margin: 10px 0;
+      text-align: center;
+      margin-bottom: 10px;
       font-size: 22px;
     }
-    video {
-      width: 100%;
-      max-height: 80vh;
-      background: #000;
+
+    .warning {
+      background: #7c2d12;
+      color: #ffedd5;
+      padding: 10px;
+      text-align: center;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      font-size: 14px;
     }
-    .tg-btn {
+
+    .telegram {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .telegram a {
       display: inline-block;
-      margin: 15px;
-      padding: 12px 20px;
-      background: #0088cc;
+      background: #229ED9;
       color: #fff;
       text-decoration: none;
-      border-radius: 5px;
-      font-size: 16px;
+      padding: 12px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .telegram a:hover {
+      background: #1b8bbf;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      opacity: 0.6;
+      margin-top: 15px;
     }
   </style>
 </head>
+
 <body>
 
-  <h1>G Midea Live</h1>
+  <div class="container">
+    <h1>📺 G Midea Live</h1>
 
-  <video id="video" controls autoplay></video>
+    <div class="warning">
+      ⚠️ This link is about to expire
+    </div>
 
-  <a class="tg-btn" href="https://t.me/sportplayergmidea" target="_blank">
-    Join Telegram Channel
-  </a>
+    <video
+      id="liveVideo"
+      class="video-js vjs-default-skin vjs-fluid"
+      controls
+      autoplay
+      muted
+      preload="auto"
+      data-setup='{}'>
+      <source src="https://hesads.akamaized.net/ns/1762771538940/fb2dde0ab254326fb24511a33c215f4f/master.m3u8" type="application/x-mpegURL">
+    </video>
 
-  <script>
-    var video = document.getElementById('video');
-    var videoSrc = "https://hesads.akamaized.net/ns/1766129448530/1a7b875a80802e5f01252ee4a8a61475/master.m3u8";
+    <div class="telegram">
+      <p>📢 Join Telegram Channel</p>
+      <a href="https://t.me/sportplayergmidea" target="_blank">
+        Join Now
+      </a>
+    </div>
 
-    if (Hls.isSupported()) {
-      var hls = new Hls();
-      hls.loadSource(videoSrc);
-      hls.attachMedia(video);
-    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-      video.src = videoSrc;
-    }
-  </script>
+    <footer>
+      Stream may stop anytime • Stay connected on Telegram
+    </footer>
+  </div>
+
+  <script src="https://vjs.zencdn.net/8.6.1/video.min.js"></script>
 
 </body>
 </html>
