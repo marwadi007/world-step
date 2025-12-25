@@ -5,91 +5,72 @@
   <title>G Midea Live</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- hls.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
   <style>
     body {
       margin: 0;
+      background: #000;
       font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #ffffff;
+      color: #fff;
       text-align: center;
     }
-
-    h1 {
-      margin: 15px 0;
-      font-size: 22px;
-      color: #38bdf8;
+    h2 {
+      margin: 10px 0;
     }
-
-    .warning {
-      background: #dc2626;
-      padding: 10px;
+    .note {
+      color: #ffcc00;
       font-size: 14px;
-      font-weight: bold;
+      margin-bottom: 10px;
     }
-
-    .player {
-      margin: 15px;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 0 15px rgba(0,0,0,0.6);
-    }
-
     video {
       width: 100%;
       height: auto;
-      background: black;
+      max-height: 70vh;
+      background: #000;
     }
-
-    .telegram {
-      margin: 20px;
+    .tg {
+      margin: 15px;
     }
-
-    .telegram a {
-      display: inline-block;
-      background: #229ED9;
-      color: white;
-      padding: 14px 25px;
-      border-radius: 30px;
+    .tg a {
+      background: #0088cc;
+      color: #fff;
+      padding: 10px 20px;
       text-decoration: none;
-      font-size: 16px;
+      border-radius: 5px;
       font-weight: bold;
-    }
-
-    .telegram a:hover {
-      background: #1d8abf;
-    }
-
-    footer {
-      margin-top: 20px;
-      font-size: 12px;
-      opacity: 0.7;
     }
   </style>
 </head>
+
 <body>
 
-  <h1>G Midea Live</h1>
+  <h2>G Midea Live</h2>
+  <div class="note">This link may expire anytime</div>
 
-  <div class="warning">
-    ⚠️ This live link may expire anytime
-  </div>
+  <video id="video" controls autoplay muted></video>
 
-  <div class="player">
-    <video controls autoplay muted playsinline>
-      <source src="https://hesads.akamaized.net/ns/1766129448530/1a7b875a80802e5f01252ee4a8a61475/master.m3u8" type="application/x-mpegURL">
-      Your browser does not support live streaming.
-    </video>
-  </div>
-
-  <div class="telegram">
+  <div class="tg">
     <a href="https://t.me/sportplayergmidea" target="_blank">
-      📢 Join Telegram Channel
+      Join Telegram Channel
     </a>
   </div>
 
-  <footer>
-    © G Midea Live | For updated links join Telegram
-  </footer>
+  <script>
+    var video = document.getElementById('video');
+    var videoSrc = "https://dt7sms0as8x6q.cloudfront.net/new-hls/694d686224aa9a0001131014/master.m3u8";
+
+    if (Hls.isSupported()) {
+      var hls = new Hls();
+      hls.loadSource(videoSrc);
+      hls.attachMedia(video);
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+      video.src = videoSrc;
+    } else {
+      alert("Your browser does not support HLS playback.");
+    }
+  </script>
 
 </body>
 </html>
