@@ -5,113 +5,93 @@
   <title>G Midea Live</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- HLS.js -->
+  <!-- hls.js -->
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #ff4d8d, #ff9acb);
-      color: #fff;
+      background: #0b0b0b;
+      color: #ffffff;
       text-align: center;
     }
 
-    .container {
-      max-width: 900px;
-      margin: 15px auto;
-      background: rgba(0,0,0,0.25);
-      border-radius: 16px;
-      padding: 15px;
-      box-shadow: 0 0 25px rgba(0,0,0,0.4);
-    }
-
     h1 {
-      margin: 10px 0;
+      margin: 12px 0;
       font-size: 22px;
+      color: #00e5ff;
     }
 
     .warning {
-      background: rgba(255, 0, 90, 0.8);
+      background: #c62828;
       padding: 10px;
-      border-radius: 8px;
       font-size: 14px;
-      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .player {
+      margin: 15px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
     }
 
     video {
       width: 100%;
       height: auto;
-      max-height: 65vh;
+      max-height: 70vh;
       background: #000;
-      border-radius: 12px;
     }
 
     .telegram {
-      margin-top: 15px;
+      margin: 20px;
     }
 
     .telegram a {
       display: inline-block;
-      background: #ff2f7a;
+      background: #229ED9;
       color: #fff;
       padding: 14px 28px;
       border-radius: 30px;
       text-decoration: none;
-      font-weight: bold;
       font-size: 16px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-    }
-
-    .telegram a:hover {
-      background: #ff0f66;
-    }
-
-    .timer {
-      margin-top: 10px;
-      font-size: 13px;
-      opacity: 0.9;
+      font-weight: bold;
     }
 
     footer {
       margin-top: 15px;
       font-size: 12px;
-      opacity: 0.7;
+      opacity: 0.6;
     }
   </style>
 </head>
 
 <body>
 
-  <div class="container">
-    <h1>💖 G Midea Live</h1>
+  <h1>📺 G Midea Live</h1>
 
-    <div class="warning">
-      ⚠️ This live link may expire anytime
-    </div>
-
-    <video id="video" controls autoplay muted playsinline></video>
-
-    <div class="telegram">
-      <a href="https://t.me/sportplayergmidea" target="_blank">
-        📢 Join Telegram Channel
-      </a>
-    </div>
-
-    <div class="timer">
-      ⏳ You will be redirected to Telegram in <span id="count">20</span> seconds
-    </div>
-
-    <footer>
-      For updated links & notifications, join our Telegram
-    </footer>
+  <div class="warning">
+    ⚠️ This live link may expire anytime
   </div>
 
-  <script>
-    // HLS Source
-    const videoSrc = "https://streams2.sofast.tv/ptnr-yupptv/title-cricketgold/v1/manifest/611d79b11b77e2f571934fd80ca1413453772ac7/b2048bb8-1686-4432-aa50-647245383e0c/b2878841-1317-4cd3-b46e-bbf0954dc260/0.m3u8";
+  <div class="player">
+    <video id="video" controls autoplay muted playsinline></video>
+  </div>
 
+  <div class="telegram">
+    <a href="https://t.me/sportplayergmidea" target="_blank">
+      📢 Join Telegram Channel
+    </a>
+  </div>
+
+  <footer>
+    Stream source may stop anytime • Join Telegram for updates
+  </footer>
+
+  <script>
     const video = document.getElementById('video');
+    const videoSrc = "https://in-mc-flive.fancode.com/mumbai/138763_english_hls_08e90c2ae937653_1ta-di_h264/1080p.m3u8?hdntl=Expires=1766728946~_GO=Generated~acl=/mumbai/138763_english_hls_08e90c2ae937653_1ta-di_h264/*~Signature=ASXJx_iQsX23gPzy1bOAesjHdCSixQEG2qnKs3JzAzB1nMIUrI1Pm5DbYIV_nA5CP8x10tndpezc4OCaBS7yWz1GSR0I";
 
     if (Hls.isSupported()) {
       const hls = new Hls();
@@ -119,20 +99,9 @@
       hls.attachMedia(video);
     } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
       video.src = videoSrc;
+    } else {
+      alert("Your browser does not support HLS playback.");
     }
-
-    // Auto Telegram Redirect Timer
-    let timeLeft = 20;
-    const countEl = document.getElementById('count');
-
-    const timer = setInterval(() => {
-      timeLeft--;
-      countEl.textContent = timeLeft;
-      if (timeLeft <= 0) {
-        clearInterval(timer);
-        window.location.href = "https://t.me/sportplayergmidea";
-      }
-    }, 1000);
   </script>
 
 </body>
