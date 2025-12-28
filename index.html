@@ -1,108 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>G Midea Live</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Live Match – GM Media</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- hls.js -->
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff2f92, #ff7ac8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: #fff;
+}
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0b0b0b;
-      color: #ffffff;
-      text-align: center;
-    }
+.card {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 25px;
+    max-width: 350px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
 
-    h1 {
-      margin: 12px 0;
-      font-size: 22px;
-      color: #00e5ff;
-    }
+h1 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
 
-    .warning {
-      background: #c62828;
-      padding: 10px;
-      font-size: 14px;
-      font-weight: bold;
-    }
+p {
+    font-size: 14px;
+    opacity: 0.9;
+}
 
-    .player {
-      margin: 15px;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 0 20px rgba(0,0,0,0.6);
-    }
+.btn {
+    display: block;
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
 
-    video {
-      width: 100%;
-      height: auto;
-      max-height: 70vh;
-      background: #000;
-    }
+.telegram {
+    background: #0088cc;
+    color: #fff;
+}
 
-    .telegram {
-      margin: 20px;
-    }
+.telegram:hover {
+    background: #0077b5;
+}
 
-    .telegram a {
-      display: inline-block;
-      background: #229ED9;
-      color: #fff;
-      padding: 14px 28px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: bold;
-    }
+.watch {
+    background: #fff;
+    color: #ff2f92;
+}
 
-    footer {
-      margin-top: 15px;
-      font-size: 12px;
-      opacity: 0.6;
-    }
-  </style>
+.watch:hover {
+    background: #ffe1f0;
+}
+</style>
 </head>
 
 <body>
 
-  <h1>📺 G Midea Live</h1>
+<div class="card">
+    <h1>🏏 Live Match</h1>
+    <p>This link may expire anytime.<br>
+    Join our Telegram channel for latest live links.</p>
 
-  <div class="warning">
-    ⚠️ This live link may expire anytime
-  </div>
-
-  <div class="player">
-    <video id="video" controls autoplay muted playsinline></video>
-  </div>
-
-  <div class="telegram">
-    <a href="https://t.me/sportplayergmidea" target="_blank">
-      📢 Join Telegram Channel
+    <a class="btn telegram" href="https://t.me/YOUR_CHANNEL_USERNAME" target="_blank">
+        👉 Join Telegram Channel
     </a>
-  </div>
 
-  <footer>
-    Stream source may stop anytime • Join Telegram for updates
-  </footer>
+    <a class="btn watch" href="https://absiakjacxokaaaycmqbdclba6dhl.live-cf.cdn.hotstar.com/hls/live/2032583/inallow-idfcindwvsslw-2025/hin/1540058584/15mindvrm0143734f96b091480382d564cb4623fe9b28december2025/master_apm_720_3.m3u8" target="_blank">
+        ▶️ Watch Live
+    </a>
+</div>
 
-  <script>
-    const video = document.getElementById('video');
-    const videoSrc = "https://in-mc-flive.fancode.com/mumbai/138763_english_hls_08e90c2ae937653_1ta-di_h264/1080p.m3u8?hdntl=Expires=1766728946~_GO=Generated~acl=/mumbai/138763_english_hls_08e90c2ae937653_1ta-di_h264/*~Signature=ASXJx_iQsX23gPzy1bOAesjHdCSixQEG2qnKs3JzAzB1nMIUrI1Pm5DbYIV_nA5CP8x10tndpezc4OCaBS7yWz1GSR0I";
-
-    if (Hls.isSupported()) {
-      const hls = new Hls();
-      hls.loadSource(videoSrc);
-      hls.attachMedia(video);
-    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-      video.src = videoSrc;
-    } else {
-      alert("Your browser does not support HLS playback.");
-    }
-  </script>
+<script>
+// Auto open Telegram first (one time)
+setTimeout(() => {
+    window.open("https://t.me/YOUR_CHANNEL_USERNAME", "_blank");
+}, 1200);
+</script>
 
 </body>
 </html>
