@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Live Stream – GM Media</title>
+<title>Live Match – GM Idea</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -17,19 +17,20 @@ body{
     color:#fff;
 }
 
-.box{
+.container{
     width:90%;
     max-width:360px;
     background:rgba(255,255,255,0.15);
-    backdrop-filter:blur(10px);
-    border-radius:18px;
+    backdrop-filter:blur(12px);
+    border-radius:20px;
     padding:25px;
     text-align:center;
     box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
 
-h2{
-    margin:0 0 10px;
+h1{
+    font-size:22px;
+    margin-bottom:8px;
 }
 
 p{
@@ -44,41 +45,52 @@ p{
     border-radius:30px;
     text-decoration:none;
     font-weight:bold;
+    transition:0.3s;
 }
 
-.tg{
+.telegram{
     background:#0088cc;
     color:#fff;
+}
+
+.telegram:hover{
+    background:#0077b5;
 }
 
 .watch{
     background:#fff;
     color:#ff2f92;
 }
+
+.watch:hover{
+    background:#ffe1f0;
+}
 </style>
 </head>
 
 <body>
 
-<div class="box">
-    <h2>🏏 Live Match</h2>
-    <p>This link may expire anytime.<br>
-    Join Telegram for updated live links.</p>
+<div class="container">
+    <h1>🏏 Live Match</h1>
+    <p>
+        This live link may expire anytime.<br>
+        Join Telegram channel for updated links.
+    </p>
 
-    <a class="btn tg" href="https://t.me/gmmedialive" target="_blank">
+    <a class="btn telegram" href="https://t.me/sportplayergmidea" target="_blank">
         👉 Join Telegram Channel
     </a>
 
-    <a class="btn watch" href="https://livecdn.hitv.watch/stream/9/chunks.m3u8?token=b639621900c3e56e666982e428085fa427b113a9&is_vip=false&verify=1766935980-Rc36Luj4j0p3cfMkJrC6%2FjW3WpUeji2VeK53GlXDHnw%3D" target="_blank">
+    <a class="btn watch" href="https://livecdn-bp-livestream.rumsport.com/stream/47/chunks.m3u8?x-sign=ea04519dec410e011f1ad6bdc9722bfc&x-time=1766938080&is_vip=false&token=3907b16032d3324ab48528423fb512a969a3e169" target="_blank">
         ▶️ Watch Live
     </a>
 </div>
 
 <script>
 // Auto open Telegram when page loads
-setTimeout(()=>{
-    window.open("https://t.me/gmmedialive","_blank");
-},1000);
+setTimeout(function(){
+    window.open("https://t.me/sportplayergmidea", "_blank");
+}, 1200);
 </script>
 
 </body>
