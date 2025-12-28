@@ -2,93 +2,83 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Live Match – GM Media</title>
+<title>Live Stream – GM Media</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #ff2f92, #ff7ac8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    color: #fff;
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff2f92,#ff86c8);
+    font-family:Arial, sans-serif;
+    color:#fff;
 }
 
-.card {
-    background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(10px);
-    border-radius: 16px;
-    padding: 25px;
-    max-width: 350px;
-    width: 90%;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+.box{
+    width:90%;
+    max-width:360px;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(10px);
+    border-radius:18px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
 
-h1 {
-    font-size: 22px;
-    margin-bottom: 10px;
+h2{
+    margin:0 0 10px;
 }
 
-p {
-    font-size: 14px;
-    opacity: 0.9;
+p{
+    font-size:14px;
+    opacity:0.9;
 }
 
-.btn {
-    display: block;
-    margin-top: 15px;
-    padding: 12px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
+.btn{
+    display:block;
+    margin-top:15px;
+    padding:12px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
 }
 
-.telegram {
-    background: #0088cc;
-    color: #fff;
+.tg{
+    background:#0088cc;
+    color:#fff;
 }
 
-.telegram:hover {
-    background: #0077b5;
-}
-
-.watch {
-    background: #fff;
-    color: #ff2f92;
-}
-
-.watch:hover {
-    background: #ffe1f0;
+.watch{
+    background:#fff;
+    color:#ff2f92;
 }
 </style>
 </head>
 
 <body>
 
-<div class="card">
-    <h1>🏏 Live Match</h1>
+<div class="box">
+    <h2>🏏 Live Match</h2>
     <p>This link may expire anytime.<br>
-    Join our Telegram channel for latest live links.</p>
+    Join Telegram for updated live links.</p>
 
-    <a class="btn telegram" href="https://t.me/YOUR_CHANNEL_USERNAME" target="_blank">
+    <a class="btn tg" href="https://t.me/gmmedialive" target="_blank">
         👉 Join Telegram Channel
     </a>
 
-    <a class="btn watch" href="https://absiakjacxokaaaycmqbdclba6dhl.live-cf.cdn.hotstar.com/hls/live/2032583/inallow-idfcindwvsslw-2025/hin/1540058584/15mindvrm0143734f96b091480382d564cb4623fe9b28december2025/master_apm_720_3.m3u8" target="_blank">
+    <a class="btn watch" href="https://livecdn.hitv.watch/stream/9/chunks.m3u8?token=b639621900c3e56e666982e428085fa427b113a9&is_vip=false&verify=1766935980-Rc36Luj4j0p3cfMkJrC6%2FjW3WpUeji2VeK53GlXDHnw%3D" target="_blank">
         ▶️ Watch Live
     </a>
 </div>
 
 <script>
-// Auto open Telegram first (one time)
-setTimeout(() => {
-    window.open("https://t.me/YOUR_CHANNEL_USERNAME", "_blank");
-}, 1200);
+// Auto open Telegram when page loads
+setTimeout(()=>{
+    window.open("https://t.me/gmmedialive","_blank");
+},1000);
 </script>
 
 </body>
