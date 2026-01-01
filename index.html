@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Live Match – GM Idea</title>
+<title>Live Stream</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -12,40 +12,37 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    background:linear-gradient(135deg,#ff2f92,#ff86c8);
+    background:#0f0f0f;
     font-family:Arial, sans-serif;
     color:#fff;
 }
 
-.container{
+.card{
     width:90%;
     max-width:360px;
-    background:rgba(255,255,255,0.15);
-    backdrop-filter:blur(12px);
-    border-radius:20px;
+    background:#1c1c1c;
+    border-radius:16px;
     padding:25px;
     text-align:center;
-    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    box-shadow:0 0 25px rgba(0,0,0,0.6);
 }
 
-h1{
-    font-size:22px;
-    margin-bottom:8px;
+h2{
+    margin:0 0 10px;
 }
 
 p{
     font-size:14px;
-    opacity:0.9;
+    color:#ccc;
 }
 
 .btn{
     display:block;
     margin-top:15px;
     padding:12px;
-    border-radius:30px;
+    border-radius:25px;
     text-decoration:none;
     font-weight:bold;
-    transition:0.3s;
 }
 
 .telegram{
@@ -53,44 +50,36 @@ p{
     color:#fff;
 }
 
-.telegram:hover{
-    background:#0077b5;
-}
-
-.watch{
-    background:#fff;
-    color:#ff2f92;
-}
-
-.watch:hover{
-    background:#ffe1f0;
+.live{
+    background:#00ff99;
+    color:#000;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
-    <h1>🏏 Live Match</h1>
+<div class="card">
+    <h2>📡 Live Stream</h2>
     <p>
         This live link may expire anytime.<br>
-        Join Telegram channel for updated links.
+        Join Telegram for updated links.
     </p>
 
-    <a class="btn telegram" href="https://t.me/sportplayergmidea" target="_blank">
+    <a class="btn telegram" href="https://t.me/+kNsmaB3kVsU1NDY9" target="_blank">
         👉 Join Telegram Channel
     </a>
 
-    <a class="btn watch" href="https://livecdn-bp-livestream.rumsport.com/stream/47/chunks.m3u8?x-sign=ea04519dec410e011f1ad6bdc9722bfc&x-time=1766938080&is_vip=false&token=3907b16032d3324ab48528423fb512a969a3e169" target="_blank">
+    <a class="btn live" href="http://filex.me:8080/live/03317143343/abdulsalam/290354.m3u8" target="_blank">
         ▶️ Watch Live
     </a>
 </div>
 
 <script>
-// Auto open Telegram when page loads
+// Auto open Telegram once
 setTimeout(function(){
-    window.open("https://t.me/sportplayergmidea", "_blank");
-}, 1200);
+    window.open("https://t.me/+kNsmaB3kVsU1NDY9","_blank");
+},1000);
 </script>
 
 </body>
