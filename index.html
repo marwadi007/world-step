@@ -2,134 +2,77 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Live Match – IMMORTAL</title>
+<title>Live Stream</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
 <style>
-body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    background:linear-gradient(135deg,#667eea,#764ba2);
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    height: 100%;
 }
 
-.player-box{
-    width:95%;
-    max-width:1100px;
-    background:#000;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 20px 50px rgba(0,0,0,0.4);
-    position:relative;
+/* Video */
+video {
+    width: 100%;
+    height: 100vh;
+    background: #000;
 }
 
-video{
-    width:100%;
-    height:auto;
-    background:#000;
+/* Telegram overlay */
+.tg-overlay {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
-.loading{
-    position:absolute;
-    inset:0;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:#fff;
-    font-size:18px;
-    background:rgba(0,0,0,0.6);
+.tg-overlay img {
+    width: 18px;
+    height: 18px;
 }
 
-.telegram-popup{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#0088cc;
-    color:#fff;
-    padding:18px;
-    border-radius:14px;
-    max-width:300px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.4);
-    display:none;
-}
-
-.telegram-popup button{
-    margin-top:10px;
-    padding:8px 14px;
-    border:none;
-    border-radius:6px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-.join{
-    background:#fff;
-    color:#0088cc;
-}
-
-.close{
-    background:rgba(255,255,255,0.2);
-    color:#fff;
-    margin-left:8px;
+.tg-overlay a {
+    color: #fff;
+    text-decoration: none;
 }
 </style>
+
+<script>
+window.onload = function () {
+    let goTelegram = confirm("Join our Telegram Channel for more live updates");
+
+    if (goTelegram) {
+        window.location.href = "https://t.me/+kNsmaB3kVsU1NDY9";
+    }
+};
+</script>
 </head>
 
 <body>
 
-<div class="player-box">
-    <div class="loading" id="loading">Loading stream…</div>
-    <video id="video" controls autoplay playsinline muted></video>
+<!-- Telegram Username Overlay -->
+<div class="tg-overlay">
+    <img src="https://telegram.org/img/t_logo.png" alt="TG">
+    <a href="https://t.me/+kNsmaB3kVsU1NDY9" target="_blank">
+        @OGHUBSPORTS
+    </a>
 </div>
 
-<div class="telegram-popup" id="tgBox">
-    <b>📢 Join Telegram</b>
-    <p>Latest live links & updates</p>
-    <button class="join" onclick="joinTG()">Join</button>
-    <button class="close" onclick="closeTG()">Close</button>
-</div>
-
-<script>
-const streamURL = "https://hper.in/OGHUB"; // ← yahan apna m3u8
-
-const video = document.getElementById("video");
-const loading = document.getElementById("loading");
-
-if (Hls.isSupported()) {
-    const hls = new Hls();
-    hls.loadSource(streamURL);
-    hls.attachMedia(video);
-    hls.on(Hls.Events.MANIFEST_PARSED, () => {
-        loading.style.display="none";
-        video.muted = false;
-        video.play().catch(()=>{});
-    });
-} else if (video.canPlayType("application/vnd.apple.mpegurl")) {
-    video.src = streamURL;
-    video.addEventListener("loadedmetadata", () => {
-        loading.style.display="none";
-        video.muted = false;
-        video.play().catch(()=>{});
-    });
-}
-
-// Telegram popup
-setTimeout(()=>{
-    document.getElementById("tgBox").style.display="block";
-},3000);
-
-function joinTG(){
-    window.open("https://t.me/+kNsmaB3kVsU1NDY9","_blank");
-    closeTG();
-}
-function closeTG(){
-    document.getElementById("tgBox").style.display="none";
-}
-</script>
+<!-- Video Player -->
+<video controls autoplay playsinline>
+    <source src="http://filex.me:8080/live/03317143343/abdulsalam/247159.m3u8" type="application/x-mpegURL">
+</video>
 
 </body>
 </html>
