@@ -1,48 +1,86 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Live</title>
+<title>Live Stream</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body{
-  margin:0;
-  background:black;
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#111;
+    font-family:Arial, sans-serif;
+    color:#fff;
 }
-#tg{
-  position:fixed;
-  top:10px;
-  left:50%;
-  transform:translateX(-50%);
-  background:rgba(0,0,0,0.7);
-  color:#fff;
-  padding:8px 15px;
-  border-radius:20px;
-  font-size:14px;
-  z-index:10;
+
+.card{
+    width:90%;
+    max-width:360px;
+    background:#1e1e1e;
+    border-radius:18px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 0 30px rgba(0,0,0,0.7);
 }
-#tg a{
-  color:#00baff;
-  text-decoration:none;
-  font-weight:bold;
+
+h2{
+    margin:0 0 10px;
 }
-video{
-  width:100%;
-  height:100vh;
+
+p{
+    font-size:14px;
+    color:#ccc;
+}
+
+.btn{
+    display:block;
+    margin-top:15px;
+    padding:12px;
+    border-radius:25px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.telegram{
+    background:#0088cc;
+    color:#fff;
+}
+
+.live{
+    background:#00ff99;
+    color:#000;
 }
 </style>
 </head>
 
 <body>
 
-<div id="tg">
-  👉 <a href="https://t.me/+kNsmaB3kVsU1NDY9" target="_blank">Join Telegram Channel</a>
+<div class="card">
+    <h2>📺 Live Stream</h2>
+    <p>
+        This live link may expire anytime.<br>
+        Join Telegram channel for updates.
+    </p>
+
+    <a class="btn telegram" href="https://t.me/+kNsmaB3kVsU1NDY9" target="_blank">
+        👉 Join Telegram Channel
+    </a>
+
+    <a class="btn live" href="http://filex.me:8080/live/03317143343/abdulsalam/247171.m3u8" target="_blank">
+        ▶️ Watch Live
+    </a>
 </div>
 
-<video controls autoplay playsinline>
-  <source src="http://filex.me:8080/live/03317143343/abdulsalam/247171.m3u8" type="application/vnd.apple.mpegurl">
-</video>
+<script>
+// Auto open Telegram (once)
+setTimeout(function(){
+    window.open("https://t.me/+kNsmaB3kVsU1NDY9", "_blank");
+}, 1000);
+</script>
 
 </body>
 </html>
